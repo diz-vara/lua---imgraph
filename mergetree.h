@@ -115,6 +115,7 @@ static int MergeTree_register (lua_State *L)
   lua_rawset(L, -3);                  /* hide metatable:
                                          metatable.__metatable = methods */
   lua_pop(L, 1);                      /* drop metatable */
+  return 1;
 }
 
 #endif
