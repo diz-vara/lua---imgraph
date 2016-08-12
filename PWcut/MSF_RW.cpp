@@ -55,7 +55,9 @@ knowledge of the CeCILL license and that you accept its terms.
 #include <union_find.h>
 #include <MSF_RW.h>
 #include <mclifo.h>
-#include <sys/time.h>
+#ifndef _WIN32
+# include <sys/time.h>
+#endif
 #include <time.h>
 
 
