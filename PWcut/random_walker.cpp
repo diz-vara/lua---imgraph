@@ -57,6 +57,18 @@ knowledge of the CeCILL license and that you accept its terms.
 
 #define MAX_ITER 500
 
+long PartitionStochastique_dec (float *A, uint32_t * I, long p, long r)
+{
+	return 	PartitionStochastique_dec<float> (A, I, p, r);
+}
+
+void TriRapideStochastique_dec (float* A, uint32_t *I, long p, long r)
+{
+	TriRapideStochastique_dec<float> (A, I, p, r);
+}
+
+
+
 
 
 void full2sparse(double *p, cs* B, int n)
