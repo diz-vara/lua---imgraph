@@ -129,7 +129,7 @@ int t1, t2,t3;
 		  
 		      if (r != p)
 			{
-			  if((abs(H[r] - H[p])<0.00001)||(H[p]>=O[r]))
+			  if((fabs(H[r] - H[p])<0.00001)||(H[p]>=O[r]))
 			    {
 			      Fth[r] = p;
 			      if(O[r]>O[p])O[p] = O[r]; 
