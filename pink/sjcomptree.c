@@ -686,19 +686,24 @@ void ColorSegmentation(graphe *g, int32_t * labels )
   F_b = UCHARDATA(image_b);
   // build lookup table
   int MaxNbRegions=rs*cs;
-  int Tab[MaxNbRegions][3];
+  //int Tab[MaxNbRegions][3];
+  int* Tab = 0;
+
+  Tab = (int*)malloc(MaxNbRegions*3 *sizeof(int));
+
   for (x = 0; x <MaxNbRegions ; x++)
     for (y = 0; y < 3; y++)
-      Tab[x][y] = (int)( 255.0 * rand() / ( RAND_MAX ) );
+      Tab[x*3+y] = (int)( 255.0 * rand() / ( RAND_MAX ) );
       
   for(x = 0; x < N; x++)
     { 
-      F_r[x] = Tab[labels[x]][0];
-      F_g[x] = Tab[labels[x]][1];
-      F_b[x] = Tab[labels[x]][2];
+      F_r[x] = Tab[labels[x]*3+0];
+      F_g[x] = Tab[labels[x]*3+1];
+      F_b[x] = Tab[labels[x]*3+2];
     }
 
   writergbimage(image_r, image_g, image_b, "result.ppm" );
+  free(Tab);
 }
 
 /***************************************************************************************************/
