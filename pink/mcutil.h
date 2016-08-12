@@ -35,6 +35,13 @@ knowledge of the CeCILL license and that you accept its terms.
 #ifdef __cplusplus
 extern "C" {
 #endif
+#ifdef max 
+# undef max
+#endif
+
+#ifdef min 
+# undef min
+#endif
 
 #define max(a,b) error_max_function_is_ambigous_use_mcmax_instead
 #define min(a,b) error_min_function_is_ambigous_use_mcmin_instead

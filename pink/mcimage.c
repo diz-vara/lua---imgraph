@@ -60,7 +60,9 @@ knowledge of the CeCILL license and that you accept its terms.
 
 #include <stdio.h>
 #include <stdint.h>
-#include <unistd.h>
+#ifndef _WIN32
+# include <unistd.h>
+#endif
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <stdlib.h>
