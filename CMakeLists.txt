@@ -21,4 +21,4 @@ SET(luasrc init.lua MalisCriterion.lua)
 
 ADD_TORCH_PACKAGE(imgraph "${src}" "${luasrc}" "Image Processing")
 SET (CMAKE_CXX_FLAGS "-fpic")
-TARGET_LINK_LIBRARIES(imgraph luaT TH graphcuts pink PWcut)
+TARGET_LINK_LIBRARIES(imgraph luaT TH libluajit graphcuts pink PWcut)
